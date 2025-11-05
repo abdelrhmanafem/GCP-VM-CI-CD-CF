@@ -49,12 +49,14 @@ on:
         description: Cloudflare API token with DNS:Edit
         required: true
 
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   deploy:
+    permissions:
+      id-token: write
+      contents: read
+      packages: write
+      
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
